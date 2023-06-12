@@ -29,7 +29,7 @@ import Doctor1 from '@public/assets/images/doctors/1.svg';
 import Doctor2 from '@public/assets/images/doctors/2.svg';
 import Doctor3 from '@public/assets/images/doctors/3.svg';
 import Doctor4 from '@public/assets/images/doctors/4.svg';
-import { BiHomeSmile , BiCog , BiMessageDetail ,BiCalendar} from 'react-icons/Bi';
+import { BiHomeSmile , BiCog , BiMessageDetail ,BiCalendar} from 'react-icons/bi';
 
 export const header = {
   logo: LogoImg,

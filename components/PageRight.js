@@ -5,7 +5,7 @@ import Image from "next/image"
 import { header } from '@data';
 import { rightpage } from '@data';
 import CustomIcon from "@utils/CustomIcons";
-import { BiHomeSmile , BiLogOut , BiCog , BiMessageDetail ,BiCalendar} from 'react-icons/Bi';
+import { BiHomeSmile , BiLogOut , BiCog , BiMessageDetail ,BiCalendar} from 'react-icons/bi';
 
 
 
