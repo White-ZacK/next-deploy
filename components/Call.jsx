@@ -39,7 +39,7 @@ const PageMid = () => {
       });
     };
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       Call(callRef.current);
     }
   }, []);
