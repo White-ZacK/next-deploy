@@ -25,15 +25,25 @@ const SignIn = () => {
 
     <section className="bg-gray-100 min-h-screen flex items-center justify-center">
 
-    <div className=" lg:bg-[url('/assets/images/password.svg')] bg-auto bg-no-repeat bg-white bg-cover flex rounded-2xl lg:min-w-[850px] lg:min-h-[550px] shadow-lg  p-5 items-center" data-aos='fade-right' data-aos-delay='200'>
+    <div className=" lg:bg-[url('/assets/images/password.svg')] bg-auto bg-no-repeat bg-white bg-cover flex rounded-2xl lg:min-w-[850px] shadow-lg  p-5 items-center" data-aos='fade-right' data-aos-delay='200'>
     <div className="md:block hidden lg:w-1/2"></div>
-      <div className="lg:w-1/2 px-8 md:px-16 text-center" data-aos='fade-down'data-aos-delay='400'>
+      <div className="lg:w-1/2 px-8 md:px-16 text-right" data-aos='fade-down'data-aos-delay='400'>
         <h2 className="font-bold text-2xl text-[#3a4d56]">تسجيل الدخول</h2>
-        <p className="text-xs mt-4 text-[#3a4d56]">قم بتسجيل الدخول الآن للمواصلة</p>
+        <p className="text-xs mt-4 text-[#3a4d56]">ليس لديك حساب ؟ قم بالتسجيل الآن</p>
   
-
-
-        <div className="mt-5 mb-10 text-xs border-b border-[#3a4d56] py-4 text-[#3a4d56] text-right"> </div>
+        <form action="" className="flex flex-col gap-4">
+          <input className="p-3 pr-6 mt-8 rounded-xl border text-right" type="email" name="email" placeholder="البريد الإلكتروني" />
+          <div className="relative">
+            <input className="p-3 pr-6 rounded-xl border w-full  text-right" type="password" name="password" placeholder="كلمة المرور" />
+          </div>
+          <button type="button" className="bg-[#4cab94] rounded-xl text-white py-2 hover:scale-105 duration-300">تسجيل الدخول</button>
+        </form>
+  
+        <div className="mt-6 grid grid-cols-3 items-center text-gray-400">
+          <hr className="border-[#3a4d56]" />
+          <p className="text-center text-sm">أو</p>
+          <hr className="border-[#3a4d56]" />
+        </div>
   
         <button onClick={() => {signIn("google");}} className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-[#3a4d56]">
         <svg className="mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="25px">
@@ -45,12 +55,18 @@ const SignIn = () => {
           تسجيل الدخول بحساب جوجل
         </button>
 
-
+        <button onClick={() => {signIn("facebook");}} className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-[#3a4d56]">
+        <svg className='mr-3' xmlns="http://www.w3.org/2000/svg" width="15px" viewBox="88.428 12.828 107.543 207.085" id="facebook"><path fill="#3c5a9a" d="M158.232 219.912v-94.461h31.707l4.747-36.813h-36.454V65.134c0-10.658 2.96-17.922 18.245-17.922l19.494-.009V14.278c-3.373-.447-14.944-1.449-28.406-1.449-28.106 0-47.348 17.155-47.348 48.661v27.149H88.428v36.813h31.788v94.461l38.016-.001z"></path></svg>
+          تسجيل الدخول بحساب فيسبوك
+        </button>
   
-        <div className="mt-5 text-xs border-b border-[#3a4d56] py-4 text-[#3a4d56] text-right"> </div>
+        <div className="mt-5 text-xs border-b border-[#3a4d56] py-4 text-[#3a4d56] text-right">
+          <a href="#">نسيت كلمة المرور ؟</a>
+        </div>
   
         <div className="mt-3 text-xs flex justify-between items-center text-[#3a4d56]">
-          
+          <button className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300">التسجيل</button>
+          <p>ليس لديك حساب ؟</p>
         </div>
       </div>
   

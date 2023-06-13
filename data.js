@@ -307,6 +307,6 @@ export const rightpage ={
     {icon: BiHomeSmile , href:'/Home', title:'الرئيسية'},
     {icon: BiCalendar , href:'/session',title:'جلساتي'},
     {icon: BiMessageDetail , href:'/messages',title:'الرسائل'},
-    {icon: BiCog , href:'/settings',title:'الاعدادات'}
+    {icon: BiCog , href:'/setting',title:'الاعدادات'}
   ]
 }

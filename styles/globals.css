@@ -113,6 +113,17 @@
              duration-500
              cursor-pointer;
   }
+  .stat{
+      @apply mb-8
+             px-2
+             py-4
+             rounded-[20px]
+             bg-white
+             shadow-md
+             hover:shadow-lg
+             duration-500
+             cursor-pointer;
+  }
   .doctor{
     @apply  mb-8
             

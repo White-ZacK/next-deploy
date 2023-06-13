@@ -1,12 +1,14 @@
 "use client";
 import { ZegoUIKitPrebuilt } from "@zegocloud/zego-uikit-prebuilt"
+import { useSession } from "next-auth/react";
 const PageMid = () => {
-
+    const { data: session } = useSession();
     const roomId = "1";
+    const name = session?.user.name;
     const Call = async (element) =>{
         const appID=2117360225;
         const serverSecret= "82670f70ce3e1e83edf8f40748a5d4fd";
-        const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomId, Date.now().toString(), "itmain");
+        const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomId, Date.now().toString(), name);
         const zc = ZegoUIKitPrebuilt.create(kitToken);
         zc.joinRoom({
             container: element,
@@ -31,11 +33,6 @@ const PageMid = () => {
 
         <div ref={Call} id='calldiv'/>
 
-        <script>
-            var calldiv = document.getElementByClassName("zego_model_parent");
-            calldiv.style.backgroundColor = "red";
-
-        </script>
     
     </div>
   )
