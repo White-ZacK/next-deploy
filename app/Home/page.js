@@ -19,7 +19,7 @@ const Home = () => {
 
   const router = useRouter();
   const { data: session } = useSession();
-  const storageAnswers = window.localStorage.getItem('ITMAIN_ANSWERS')
+  const storageAnswers = localStorage.getItem('ITMAIN_ANSWERS')
   const userId = session?.user.id
   console.log(userId)
   useEffect(() => {
@@ -55,7 +55,7 @@ const Home = () => {
     } catch (error) {
       console.log(error);
     } finally {
-      window.localStorage.removeItem('ITMAIN_ANSWERS');
+      localStorage.removeItem('ITMAIN_ANSWERS');
     }
   };
 
