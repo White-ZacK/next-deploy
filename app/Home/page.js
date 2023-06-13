@@ -33,7 +33,12 @@ const Home = () => {
 
     if (typeof window !== 'undefined') {
       initializeAOS();
-      const storageAnswers = localStorage.getItem('ITMAIN_ANSWERS')
+    }
+    const storageAnswers = localStorage.getItem('ITMAIN_ANSWERS')
+    if(storageAnswers && storageAnswers.length>0 && storageAnswers !=[]){
+      console.log(storageAnswers)
+      console.log('Hi hhh') 
+      createPrompt();
     }
   }, []);
 
@@ -60,13 +65,7 @@ const Home = () => {
     }
   };
 
-  if(storageAnswers && storageAnswers.length>0 && storageAnswers !=[]){
-    console.log(storageAnswers)
-    console.log('Hi hhh') 
-    createPrompt();
 
-    
-  }
   return (
     <div className='flex flex-row juctify-center items-center juctify-space-between center h-screen pt-2 overflow-hidden	'>
 
