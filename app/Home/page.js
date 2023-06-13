@@ -19,7 +19,7 @@ const Home = () => {
 
   const router = useRouter();
   const { data: session } = useSession();
-  const storageAnswers = localStorage.getItem('ITMAIN_ANSWERS')
+  
   const userId = session?.user.id
   console.log(userId)
   useEffect(() => {
@@ -33,6 +33,7 @@ const Home = () => {
 
     if (typeof window !== 'undefined') {
       initializeAOS();
+      const storageAnswers = localStorage.getItem('ITMAIN_ANSWERS')
     }
   }, []);
 
