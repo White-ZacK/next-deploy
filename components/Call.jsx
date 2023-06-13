@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt';
 import { useSession } from 'next-auth/react';
 
 const PageMid = () => {
@@ -9,7 +8,8 @@ const PageMid = () => {
   const callRef = useRef(null);
 
   useEffect(() => {
-    const Call = async (element) => {
+    const loadZegoUIKitPrebuilt = async () => {
+      const { ZegoUIKitPrebuilt } = await import('@zegocloud/zego-uikit-prebuilt');
       const appID = 2117360225;
       const serverSecret = '82670f70ce3e1e83edf8f40748a5d4fd';
       const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
@@ -21,7 +21,7 @@ const PageMid = () => {
       );
       const zc = ZegoUIKitPrebuilt.create(kitToken);
       zc.joinRoom({
-        container: element,
+        container: callRef.current,
         turnOnMicrophoneWhenJoining: true,
         turnOnCameraWhenJoining: true,
         showMyCameraToggleButton: true,
@@ -39,8 +39,8 @@ const PageMid = () => {
       });
     };
 
-    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-      Call(callRef.current);
+    if (typeof window !== 'undefined') {
+      loadZegoUIKitPrebuilt();
     }
   }, []);
 
